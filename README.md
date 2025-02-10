@@ -151,6 +151,8 @@ https://github.com/user-attachments/assets/9b095b77-97f7-4680-8dda-c01bf6dd4201
         - Ctrl + Shift + P(명령 팔레트)
             - Create: 새 Jupyter 노트북 클릭
             - 무조건 저장 먼저
+        - GUI 학습에는 불합리
+        - 빅데이터분석, 머신러닝, 딥러닝 많이 활용
 
     - GUI 학습(tkinter)
         - GUI(Graphic User Interface) - 그래픽 사용자 인터페이스
@@ -171,5 +173,20 @@ https://github.com/user-attachments/assets/9b095b77-97f7-4680-8dda-c01bf6dd4201
             - 모바일특화로 멀티플랫폼 지원
             - 가장 어렵다
     
-    - 토이프로젝트
-        - 윈도우앱(PyQT)
+    - Tkinter 학습
+        - 기본 템플릿
+
+        ```python
+        from tkinter import *
+
+        root = Tk()
+        # 이 사이에 위젯, 이벤트 등 작성
+        # Label, Button, Entry, RadioButton
+        # Checkbutton, Listbox, Frame 등...
+        # 위젯.pack() 필수!
+        root.mainloop()
+        ```
+<!-- 주석 -- >
+<!-- html에서 사용하는 <img> 태그로 캡쳐한 이미지를 추가-->
+![py001](./image/py001.png)
+<img src"./image/py001.png" width="400">
