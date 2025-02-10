@@ -24,9 +24,14 @@ def run():
         sel_menu = set_menu()
         if sel_menu == 1:
             # print('영화 입력')
-            movie = set_movie()
-            lst_movie.append(movie)
-
+            try:
+                movie = set_movie()
+                lst_movie.append(movie)
+                print('영화입력 성공!')
+            except Exception as e:
+                print(f'영화입력 실패!! {e}')
+            input("\n> 계속하려면 엔터를 누르세요...")  # 엔터 입력 대기
+        
         elif sel_menu == 2:
             print('영화 출력')
             get_movie(lst_movie)
@@ -35,6 +40,7 @@ def run():
             print('영화 검색')
             title = input('검색할 영화명 입력 > ')
             search_movie(lst_movie, title)
+            input("\n> 계속하려면 엔터를 누르세요...")  # 엔터 입력 대기
 
         elif sel_menu == 4:
             print('영화 삭제')
@@ -52,9 +58,16 @@ def run():
 
 # 영화 검색 함수
 def search_movie(items: list, title: str):
+    count = 0  # `count` 변수를 0으로 초기화
+
     for item in items: # item이 Movie 클래스인지 알 수 없음
         if item.isNameContain(title): # 오타발생 위험!
+                count += 1 # 검색된 결과가 있음
                 print(item)
+                print('--------')
+
+    print(f'검색 데이터수: {count} 개')
+
 
 def del_movie(items: list, title:str):
     for i, item in enumerate(items):
@@ -103,6 +116,13 @@ def set_movie():
 def get_movie(items: list):
     for item in items:
         print(item)    # Movie객체
+        print('--------')   # 각 영화 아이템별 구분자
+
+    print(f'총 데이터수: {len(items)} 개')
+
+    if os.name == 'nt':  # Windows 환경이면
+        os.system("pause")  # "Press any key to continue..." 메시지 표시
+ # 출력 시 클린 스크린 되어버리는 문제 해결용 코드
 
 def set_menu():
     str_menu = ('내영화 앱 v{VERSION}\n'
