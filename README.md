@@ -189,4 +189,4 @@ https://github.com/user-attachments/assets/9b095b77-97f7-4680-8dda-c01bf6dd4201
 <!-- 주석 -- >
 <!-- html에서 사용하는 <img> 태그로 캡쳐한 이미지를 추가-->
 ![py001](./image/py001.png)
-<img src"./image/py001.png" width="400">
+<img src="./image/py001.png" width="400">
